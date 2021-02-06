@@ -17,7 +17,6 @@ public class DigitUtils {
                 newArray[i] = Character.getNumericValue(digit);
             } else {
                 String digit = String.valueOf(Character.toUpperCase(numericString.charAt(i)));
-                int digitValue;
                 switch(digit) {
                     case "A":
                         newArray[i] = 10;
@@ -41,6 +40,20 @@ public class DigitUtils {
             }
         }
         return newArray;
+    }
+
+    /**
+     * This method is used to convert an array of digits
+     * into an int with the digits arranged left to right respectively to each digit index.
+     * @param numberArray This is the parameter to pass the digits array.
+     * @return String This returns the integer represents the array of digits.
+     */
+    public String digitsArrayToNumber(int[] numberArray) {
+        String numberString = null;
+        for (int i = 0; i < numberArray.length; i++) {
+            numberString += numberArray[i];
+        }
+        return numberString;
     }
 
 }

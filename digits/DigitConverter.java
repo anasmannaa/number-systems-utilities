@@ -49,4 +49,42 @@ public class DigitConverter {
         }
         return totalValue;
     }
+
+    /**
+     * This method is used to convert a decimal value into
+     * equivalent binary value in a form od int digits.
+     * @param decimalValue This is the parameter to pass the decimal value to be converted
+     * @return String This returns the equivalent binary value in a string form.
+     */
+    public String decimalToBinary(int decimalValue) {
+        var digitUtility = new DigitUtils();
+        int nearestPower = getNearstPower(decimalValue);
+        int powerCounter = nearestPower - 1;
+        int [] binaryDigits = new int[nearestPower + 1];
+        binaryDigits[0] = 1;
+        decimalValue -= (int) Math.pow(2, nearestPower);
+        for (int i = 1; i <= nearestPower; i++) {
+            if (((int) Math.pow(2, powerCounter) <= decimalValue) && ((int) Math.pow(2, powerCounter) > 0) ) {
+                binaryDigits[i] = 1;
+                decimalValue -= (int) Math.pow(2, powerCounter);
+            } else {
+                binaryDigits[i] = 0;
+            }
+            powerCounter -= 1;
+        }
+        String binaryResult = digitUtility.digitsArrayToNumber(binaryDigits);
+        return binaryResult;
+    }
+
+    private int getNearstPower(int decimalValue) {
+        int pow = 1;
+        while (decimalValue / 2 >= 2) {
+            pow += 1;
+            decimalValue /= 2;
+        }
+        if (decimalValue <= 1) {
+            pow = 0;
+        }
+        return pow;
+    }
 }

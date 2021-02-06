@@ -3,7 +3,7 @@ package com.anasmannaa.digits;
 public class DigitUtils {
 
     /**
-     * This method is used to convert a string of a specific number digits (binary, octal, decimal, hexadecimal)
+     * This method is used to convert a string representation parallel to a number (binary, octal, decimal, hexadecimal)
      * into an int array of its individual digits with the length of the number string itself.
      * @param numericString This is the parameter to pass the string specified.
      * @return int[] This returns the equivalent array of integers.
@@ -44,7 +44,7 @@ public class DigitUtils {
 
     /**
      * This method is used to convert an array of digits
-     * into an int with the digits arranged left to right respectively to each digit index.
+     * into an a String with the digits arranged left to right respectively.
      * @param numberArray This is the parameter to pass the digits array.
      * @return String This returns the integer represents the array of digits.
      */

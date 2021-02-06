@@ -52,13 +52,13 @@ public class DigitConverter {
 
     /**
      * This method is used to convert a decimal value into
-     * equivalent binary value in a form od int digits.
+     * equivalent binary value in a form String of the binary digits of the digit itself.
      * @param decimalValue This is the parameter to pass the decimal value to be converted
      * @return String This returns the equivalent binary value in a string form.
      */
     public String decimalToBinary(int decimalValue) {
         var digitUtility = new DigitUtils();
-        int nearestPower = getNearstPower(decimalValue);
+        int nearestPower = getNearestPower(decimalValue);
         int powerCounter = nearestPower - 1;
         int [] binaryDigits = new int[nearestPower + 1];
         binaryDigits[0] = 1;
@@ -76,7 +76,12 @@ public class DigitConverter {
         return binaryResult;
     }
 
-    private int getNearstPower(int decimalValue) {
+    /**
+     * This method returns the nearest power of two that equals to or less than the value of an integer
+     * @param decimalValue This is the parameter passes the decimal value.
+     * @return int This returns the nearest power.
+     */
+    private int getNearestPower(int decimalValue) {
         int pow = 1;
         while (decimalValue / 2 >= 2) {
             pow += 1;

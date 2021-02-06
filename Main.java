@@ -33,13 +33,16 @@ public class Main {
 //        hexaArray = digitUtil.createNumericArray(digits);
 //        System.out.println(digitsConverter.binaryToDecimal(hexaArray));
 
-        // example: Add two binaries
+
         System.out.println("Insert First Binary:");
         String firstBinary = in.nextLine();
         System.out.println("Insert Second Binary:");
         String secondBinary = in.nextLine();
         var binaryMath = new BinaryMath();
+        // example: Add two binaries
         System.out.println(binaryMath.addTwoBinaries(firstBinary, secondBinary));
+        // example: Multiply two binaries
+        System.out.println(binaryMath.multiplyTwoBinaries(firstBinary, secondBinary));
 
 
 
